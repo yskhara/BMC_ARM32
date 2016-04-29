@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\STM32F30x_StdPeriph_Driver">
+      <UniqueIdentifier>{655b20f9-12d3-44b0-8de0-fba4b059a405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\STM32F30x_StdPeriph_Driver">
+      <UniqueIdentifier>{295978bd-9c98-4bfe-b668-d1c939f40e31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\CMSIS">
+      <UniqueIdentifier>{bd22e37a-fe7d-4530-a827-4535d952ea80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\CMSIS\Device">
+      <UniqueIdentifier>{5b71ca3b-f582-4adf-bf07-7082af0046e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="retarget.c">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="system_stm32f30x.c">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_adc.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_can.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_comp.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_crc.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_dac.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_dbgmcu.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_dma.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_exti.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_flash.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_fmc.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_gpio.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_hrtim.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_i2c.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_iwdg.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_misc.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_opamp.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_pwr.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_rcc.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_rtc.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_spi.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_syscfg.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_tim.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_usart.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\STM32F30x_StdPeriph_Driver\src\stm32f30x_wwdg.c">
+      <Filter>ソース ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="init.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="control.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="interrupt.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="init.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="stm32f30x_conf.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_adc.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_can.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_comp.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_crc.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_dac.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_dbgmcu.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_dma.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_exti.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_flash.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_fmc.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_gpio.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_hrtim.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_i2c.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_iwdg.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_misc.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_opamp.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_pwr.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_rcc.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_rtc.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_spi.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_syscfg.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_tim.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_usart.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\STM32F30x_StdPeriph_Driver\inc\stm32f30x_wwdg.h">
+      <Filter>ヘッダー ファイル\STM32F30x_StdPeriph_Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Include\arm_common_tables.h">
+      <Filter>ヘッダー ファイル\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Include\arm_const_structs.h">
+      <Filter>ヘッダー ファイル\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Include\arm_math.h">
+      <Filter>ヘッダー ファイル\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Include\core_cm4.h">
+      <Filter>ヘッダー ファイル\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Include\core_cmFunc.h">
+      <Filter>ヘッダー ファイル\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Include\core_cmInstr.h">
+      <Filter>ヘッダー ファイル\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Include\core_cmSimd.h">
+      <Filter>ヘッダー ファイル\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Include\core_sc000.h">
+      <Filter>ヘッダー ファイル\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Include\core_sc300.h">
+      <Filter>ヘッダー ファイル\CMSIS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Device\ST\STM32F30x\Include\stm32f30x.h">
+      <Filter>ヘッダー ファイル\CMSIS\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libraries\CMSIS\Device\ST\STM32F30x\Include\system_stm32f30x.h">
+      <Filter>ヘッダー ファイル\CMSIS\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="control.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="interrupt.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="startup_stm32f30x.s">
+      <Filter>ソース ファイル</Filter>
+    </None>
+    <None Include="Makefile" />
+    <None Include="STM32F303xE.ld" />
+  </ItemGroup>
+</Project>
