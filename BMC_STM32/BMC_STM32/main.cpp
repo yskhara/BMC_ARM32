@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 
 uint32_t _clocks_in_us;
 
@@ -100,16 +100,23 @@ void StartMotor(void)
 
 	printf("sc\n");
 
-	/* 
-	 * COMP1Š„‚è‚İ‚ÍCCOMP1o—Í‚Ì—§‚¿ã‚ª‚èƒGƒbƒW‚Å‚Ì‚İ”­¶‚·‚éD
-	 * ’†“_“dˆÊ‚ÍCOMP1‚Ì”ñ”½“]“ü—Í‚ÉÚ‘±‚³‚ê‚é‚Ì‚ÅCCOMP1‚Ìo—Í‹É«İ’è‚ª”ñ”½“]iŠù’èj‚Ì‚Æ‚«C
-	 * ‚ ‚éƒsƒ“‚Ì“dˆÊ‚ª’†“_“dˆÊ‚ğ’´‚¦‚éuŠÔ‚ÉCOMP1‚Ìo—Í‚Í—§‚¿‰º‚ª‚éD
-	 * ]‚Á‚ÄC‚ ‚éƒsƒ“‚Ì“dˆÊ‚ª’†“_“dˆÊ‚æ‚è‚‚­‚È‚éuŠÔ‚ğ‘¨‚¦‚é‚É‚ÍCOMP1‚Ìo—Í‹É«İ’è‚ğ”½“]‚É‚·‚ê‚Î‚æ‚­C
-	 * ‹t‚ÉC‚ ‚éƒsƒ“‚Ì“dˆÊ‚ª’†“_“dˆÊ‚æ‚è’á‚­‚È‚éuŠÔ‚ğ‘¨‚¦‚é‚É‚ÍCOMP1‚Ìo—Í‹É«İ’è‚ğ”ñ”½“]‚É‚·‚ê‚Î‚æ‚¢D
+	/*
+	 * Okay, these character code stuff is killing me. Ugh!
+	 * COMP1 interrupt is triggered on a rising edge of COMP1 output.
+	 * COMP1å‰²ã‚Šè¾¼ã¿ã¯ï¼ŒCOMP1å‡ºåŠ›ã®ç«‹ã¡ä¸ŠãŒã‚Šã‚¨ãƒƒã‚¸ã§ã®ã¿ç™ºç”Ÿã™ã‚‹ï¼
+	 * The neutral point is connected to the NON-inverted input of COMP1; so if COMP1 output polarity is set to non-inverted (default), 
+	 * ä¸­ç‚¹é›»ä½ã¯COMP1ã®éåè»¢å…¥åŠ›ã«æ¥ç¶šã•ã‚Œã‚‹ã®ã§ï¼ŒCOMP1ã®å‡ºåŠ›æ¥µæ€§è¨­å®šãŒéåè»¢ï¼ˆæ—¢å®šï¼‰ã®ã¨ãï¼Œ
+	 * COMP1 output would fall on the moment when the voltage of one pole goes above the neutral voltage.
+	 * ã‚ã‚‹ãƒ”ãƒ³ã®é›»ä½ãŒä¸­ç‚¹é›»ä½ã‚’è¶…ãˆã‚‹ç¬é–“ã«COMP1ã®å‡ºåŠ›ã¯ç«‹ã¡ä¸‹ãŒã‚‹ï¼
+	 * Hence, COMP1 output polarity must be set to inverted to receive COMP1 interrupt on the moment when one pole goes above neutral.
+	 * å¾“ã£ã¦ï¼Œã‚ã‚‹ãƒ”ãƒ³ã®é›»ä½ãŒä¸­ç‚¹é›»ä½ã‚ˆã‚Šé«˜ããªã‚‹ç¬é–“ã‚’æ‰ãˆã‚‹ã«ã¯COMP1ã®å‡ºåŠ›æ¥µæ€§è¨­å®šã‚’åè»¢ã«ã™ã‚Œã°ã‚ˆãï¼Œ
+	 * the polarity must be set to non-inverted otherwise.
+	 * é€†ã«ï¼Œã‚ã‚‹ãƒ”ãƒ³ã®é›»ä½ãŒä¸­ç‚¹é›»ä½ã‚ˆã‚Šä½ããªã‚‹ç¬é–“ã‚’æ‰ãˆã‚‹ã«ã¯COMP1ã®å‡ºåŠ›æ¥µæ€§è¨­å®šã‚’éåè»¢ã«ã™ã‚Œã°ã‚ˆã„ï¼
 	 */
 
 	/*
-	 * Phase5‚É‚¨‚¢‚Ä‚ÍCU‘ŠiPA0j‚Ì—§‚¿ã‚ª‚èƒGƒbƒW‚ğŠú‘Ò‚·‚éD‚æ‚Á‚ÄCo—Í‹É«‚Í”½“]D
+	 * On Phase5, rising edge on the U-Pole is expected; so output polarity must be set to inverted.
+	 * Phase5ã«ãŠã„ã¦ã¯ï¼ŒUç›¸ï¼ˆPA0ï¼‰ã®ç«‹ã¡ä¸ŠãŒã‚Šã‚¨ãƒƒã‚¸ã‚’æœŸå¾…ã™ã‚‹ï¼ã‚ˆã£ã¦ï¼Œå‡ºåŠ›æ¥µæ€§ã¯åè»¢ï¼
 	 */
 	PeripheralInit::InitCOMP1(PeripheralInit::Comp1InvInp::PA0, PeripheralInit::CompOutPol::Inverted);
 
@@ -125,7 +132,7 @@ void StopMotor(void)
 
 inline void Commutate()
 {
-	// 5‚æ‚è‘å‚«‚©‚Á‚½‚ç—áŠO‘—o‚µ‚Ä‚à—Ç‚¢‚©‚à‚µ‚ê‚È‚¢D
+	// maybe I could just throw an exception for DrivePhase > 5.
 	if (DrivePhase >= 5)
 	{
 		DrivePhase = 0;
@@ -144,14 +151,14 @@ void COMP1Interrupt(void)
 	printf("c1i\n");
 	NVIC_DisableIRQ(COMP1_2_3_IRQn);
 
-	// TODO: ‚±‚±‚ÅƒJƒEƒ“ƒ^‚Ì’l‚ğ‘€ì‚µ‚Ä‘¬“x‚ğ§Œä‚·‚é
+	// TODO: Implement speed control; manipulate the counter value
 	TIM_CounterModeConfig(TIM4, TIM_CounterMode_Down);
 
 	NVIC_EnableIRQ(TIM4_IRQn);
 }
 
 /*
- * ƒÄŒf„
+ * ÂOnce again: 
  * stage|| 0 | 1 | 2 | 3 | 4 | 5 |  lo /  hi / fb
  * -----++---+---+---+---+---+---+
  *    U || H | H | Z | L | L | Z | PC0 / PC3 / PA0
@@ -168,7 +175,7 @@ void TIM4Interrupt(void)
 	printf("t4i\n");
 	NVIC_DisableIRQ(TIM4_IRQn);
 
-	// ‚±‚±‚ÅDrivePhase‚ªXV‚³‚ê‚é
+	// DrivePhase should be updated in this function call: 
 	Commutate();
 
 	switch (DrivePhase)
@@ -193,12 +200,12 @@ void TIM4Interrupt(void)
 		break;
 	default:
 		printf("drivephase outta range");
-		// —áŠO‚ğ‘—o‚µ‚Ä‚à‚æ‚¢D
+		// Again, an exception can be thrown.
 		break;
 	}
 
 	/*
-	* Phase0,2,4‚É‚¨‚¢‚Ä‚ÍCŠe‘Š‚Ì—§‚¿‰º‚ª‚èƒGƒbƒW‚ğŠú‘Ò‚·‚éD‚æ‚Á‚ÄCo—Í‹É«‚Í”ñ”½“]D
+	* Phase0,2,4â€šÃ‰â€šÂ¨â€šÂ¢â€šÃ„â€šÃÂCÅ eâ€˜Å â€šÃŒâ€”Â§â€šÂ¿â€°Âºâ€šÂªâ€šÃ¨Æ’GÆ’bÆ’Wâ€šÃ°Å Ãºâ€˜Ã’â€šÂ·â€šÃ©ÂDâ€šÃ¦â€šÃâ€šÃ„ÂCÂoâ€”Ãâ€¹Ã‰ÂÂ«â€šÃâ€Ã±â€Â½â€œ]ÂD
 	*/
 	//PeripheralInit::InitCOMP1(PeripheralInit::Comp1InvInp::PA5, PeripheralInit::CompOutPol::NonInverted);
 
